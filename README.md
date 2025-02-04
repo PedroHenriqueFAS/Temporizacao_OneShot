@@ -22,13 +22,6 @@ Este projeto implementa um sistema de temporização para o acionamento sequenci
 
 ## 📂 Estrutura do Projeto
 
-O projeto é composto pelos seguintes componentes necessários:
-
-- Raspberry Pi Pico W
-- 03 LEDs (Azul - GPIO 11, Vermelho - GPIO 12, Verde - GPIO 13)
-- 03 Resistores de 330 Ω
-- Botão (Pushbutton - GPIO 5)
-
 O projeto é composto pelos seguintes arquivos principais:
 
 - `OneShot.c`: Contém a lógica principal do sistema.
@@ -37,7 +30,10 @@ O projeto é composto pelos seguintes arquivos principais:
 
 ## 🛠️ Requisitos
 
-- Raspberry Pi Pico
+- Raspberry Pi Pico W
+- 03 LEDs (Azul - GPIO 11, Vermelho - GPIO 12, Verde - GPIO 13)
+- 03 Resistores de 330 Ω
+- Botão (Pushbutton - GPIO 5)
 - SDK do Pico instalado
 - CMake
 - Compilador compatível com C e C++
