@@ -47,13 +47,19 @@ int main() {
     gpio_pull_up(BUTTON_PIN);
 
     while (true) {
+        // Verifica se o botão foi pressionado (nível baixo no pino) e se o LED não está ativo.
         if (gpio_get(BUTTON_PIN) == 0 && !leds_active) {
             sleep_ms(50); // Debounce
+
+            // Verifica novamente o estado do botão após o debounce.
             if (gpio_get(BUTTON_PIN) == 0) {
                 leds_active = true;
                 gpio_put(LED_PIN_B, 1);
                 gpio_put(LED_PIN_R, 1);
                 gpio_put(LED_PIN_G, 1);
+                
+                // Agenda um alarme para desligar o LED após 3 segundos (3000 ms).
+                // A função 'turn_off_callback' será chamada após esse tempo.
                 add_alarm_in_ms(3000, turn_off_blue_callback, NULL, false);
             }
         }
